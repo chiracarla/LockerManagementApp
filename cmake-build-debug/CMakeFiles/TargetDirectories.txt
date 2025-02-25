@@ -1,0 +1,3 @@
+/Users/carlachira/CLionProjects/LockerManagementApp/cmake-build-debug/CMakeFiles/LockerManagementApp.dir
+/Users/carlachira/CLionProjects/LockerManagementApp/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/carlachira/CLionProjects/LockerManagementApp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
