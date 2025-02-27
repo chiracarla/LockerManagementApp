@@ -4,7 +4,11 @@ project(LockerManagementApp)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(LockerManagementApp main.cpp
-        Locker.cpp
-        Locker.h
-        Reservation.cpp
-        Reservation.h)
+        Model/Locker.cpp
+        Model/Locker.h
+        Model/Reservation.cpp
+        Model/Reservation.h
+        Repository/LockerRepository.cpp
+        Repository/LockerRepository.h
+        Repository/ReservationRepository.cpp
+        Repository/ReservationRepository.h)

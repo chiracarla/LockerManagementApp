@@ -12,7 +12,7 @@ int main() {
     //set out of order locker
     //save to file
     //all busy message
-    //self  service luggage storage
+    //self-service luggage storage
     //set prices
     return 0;
 }
