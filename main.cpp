@@ -1,4 +1,11 @@
 #include <iostream>
+#include "Model/Locker.h"
+#include "Repository/LockerRepository.h"
+#include "Repository/ReservationRepository.h"
+#include "Model/Reservation.h"
+
+
+using namespace std;
 
 int main() {
 
@@ -14,5 +21,10 @@ int main() {
     //all busy message
     //self-service luggage storage
     //set prices
+    LockerRepository lockerRepo;
+    cout << lockerRepo.lockers.size();
+//    lockerRepo.update(Locker(2,3,"middle", SMALL, 11));
+//    cout<<lockerRepo.read(2);
+    cout<<lockerRepo.getAll().at(1);
     return 0;
 }

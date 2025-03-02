@@ -8,15 +8,21 @@
 
 using namespace std;
 
-enum Size{SMALL, MEDIUM, LARGE};
+enum Size {
+    SMALL, MEDIUM, LARGE
+};
 
 class Locker {
 private:
     int lockerNumber;
     string location;
     enum Size size;
+    int id;
+    float price;
 public:
-    Locker(int lockerNumber, const string &location, Size size);
+    Locker(int id, int lockerNumber, const string &location, Size size, float price);
+
+    Locker();
 
     int getLockerNumber() const;
 
@@ -29,6 +35,14 @@ public:
     Size getSize() const;
 
     void setSize(Size size);
+
+    int getId() const;
+
+    void setId(int id);
+
+    float getPrice() const;
+
+    void setPrice(float price);
 
     friend ostream &operator<<(ostream &os, const Locker &locker);
 

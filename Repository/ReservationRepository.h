@@ -5,8 +5,8 @@
 #ifndef LOCKERMANAGEMENTAPP_RESERVATIONREPOSITORY_H
 #define LOCKERMANAGEMENTAPP_RESERVATIONREPOSITORY_H
 
-#include "../Model/Locker.h";
-#include "../Model/Reservation.h";
+#include "../Model/Locker.h"
+#include "../Model/Reservation.h"
 #include<fstream>
 #include<iostream>
 

@@ -5,7 +5,7 @@
 #ifndef LOCKERMANAGEMENTAPP_RESERVATION_H
 #define LOCKERMANAGEMENTAPP_RESERVATION_H
 #include<ctime>
-#include <ostream>
+#include <iostream>
 #include"Locker.h"
 
 using namespace std;
@@ -21,16 +21,25 @@ private:
 //    std::cout << "Hour: " << localTime->tm_hour << "\n";
 //    std::cout << "Minute: " << localTime->tm_min << "\n";
 //    std::cout << "Second: " << localTime->tm_sec << "\n";
+
+//std::string dateStr = "2025-02-27 14:30:45";
+//    std::tm tm = {};
+//    std::istringstream ss(dateStr);
+//    ss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");
+//
+//    std::time_t time = std::mktime(&tm);
+//    std::cout << "Parsed Time: " << std::ctime(&time);
+    int id;
     time_t start;
     Locker locker;
     string password;
     string phoneNumber;
 public:
-    Reservation(time_t now, const Locker &locker, const string &password, const string &phoneNumber);
+    Reservation(time_t now, const Locker &locker, const string &password, const string &phoneNumber, int id);
 
-    time_t getNow() const;
+    time_t getStart() const;
 
-    void setNow(time_t now);
+    void setStart(time_t now);
 
     const Locker &getLocker() const;
 
@@ -43,6 +52,10 @@ public:
     const string &getPhoneNumber() const;
 
     void setPhoneNumber(const string &phoneNumber);
+
+    int getId() const;
+
+    void setId(int id);
 
     friend ostream &operator<<(ostream &os, const Reservation &reservation);
 };

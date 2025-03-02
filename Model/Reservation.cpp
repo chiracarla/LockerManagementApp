@@ -4,14 +4,14 @@
 
 #include "Reservation.h"
 
-Reservation::Reservation(time_t now, const Locker &locker, const string &password, const string &phoneNumber) : start(
+Reservation::Reservation(time_t now, const Locker &locker, const string &password, const string &phoneNumber, int id) : start(
         now), locker(locker), password(password), phoneNumber(phoneNumber) {}
 
-time_t Reservation::getNow() const {
+time_t Reservation::getStart() const {
     return start;
 }
 
-void Reservation::setNow(time_t now) {
+void Reservation::setStart(time_t now) {
     Reservation::start = now;
 }
 
@@ -39,8 +39,17 @@ void Reservation::setPhoneNumber(const string &phoneNumber) {
     Reservation::phoneNumber = phoneNumber;
 }
 
+int Reservation::getId() const {
+    return id;
+}
+
+void Reservation::setId(int id) {
+    Reservation::id = id;
+}
+
 ostream &operator<<(ostream &os, const Reservation &reservation) {
     os << "start: " << reservation.start << " locker: " << reservation.locker << " password: " << reservation.password
        << " phoneNumber: " << reservation.phoneNumber;
     return os;
 }
+
