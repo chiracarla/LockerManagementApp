@@ -1,7 +1,7 @@
 # Self-Service Luggage Storage System
 
 ## Overview
-This system allows users to make reservations for luggage storage lockers, pay for their usage, and manage temporary passwords. Managers can configure locker prices, mark lockers as out of order, and oversee the overall functionality of the system.
+This project follows clean OOP principles, ensuring maintainability and scalability in C++ development. This system allows users to make reservations for luggage storage lockers, pay for their usage, and manage temporary passwords. Managers can configure locker prices, mark lockers as out of order, and oversee the overall functionality of the system.
 
 ## Features
 
