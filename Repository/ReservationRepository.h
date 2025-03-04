@@ -1,6 +1,3 @@
-//
-// Created by Carla Chira on 27.02.2025.
-//
 
 #ifndef LOCKERMANAGEMENTAPP_RESERVATIONREPOSITORY_H
 #define LOCKERMANAGEMENTAPP_RESERVATIONREPOSITORY_H
@@ -9,14 +6,28 @@
 #include "../Model/Reservation.h"
 #include<fstream>
 #include<iostream>
+#include "LockerRepository.h"
 
 using namespace std;
 
 class ReservationRepository {
 private:
-    vector<Reservation> reservations;
+//    map<int, Reservation> reservations;
+    LockerRepository lockerRepo;
 public:
-    ReservationRepository();
+    explicit ReservationRepository(const LockerRepository &lockerRepo);
+    map<int, Reservation> reservations;
+    void readAll();
+
+    void create(Reservation newRes);
+
+    Reservation read(int id);
+
+    void update(Reservation updatedRes);
+
+    void del(int id);
+
+    vector<Reservation> getAll();
 
 };
 

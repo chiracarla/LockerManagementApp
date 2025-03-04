@@ -19,10 +19,13 @@ private:
     enum Size size;
     int id;
     float price;
+    string status;//busy/empty
 public:
-    Locker(int id, int lockerNumber, const string &location, Size size, float price);
+    Locker(int id, int lockerNumber, const string &location, Size size, float price, string status);
 
-    Locker();
+    const string &getStatus() const;
+
+    void setStatus(const string &status);
 
     int getLockerNumber() const;
 

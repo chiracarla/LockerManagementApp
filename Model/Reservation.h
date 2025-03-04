@@ -31,11 +31,21 @@ private:
 //    std::cout << "Parsed Time: " << std::ctime(&time);
     int id;
     time_t start;
+    int hours;
     Locker locker;
     string password;
     string phoneNumber;
+    float totalPrice;
 public:
-    Reservation(time_t now, const Locker &locker, const string &password, const string &phoneNumber, int id);
+    Reservation(int id, time_t now, int hours, const Locker &locker, const string &password, const string &phoneNumber, float totalPrice);
+
+    int getHours() const;
+
+    void setHours(int hours);
+
+    float getTotalPrice() const;
+
+    void setTotalPrice(float totalPrice);
 
     time_t getStart() const;
 

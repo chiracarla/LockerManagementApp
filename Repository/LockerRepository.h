@@ -17,14 +17,23 @@ class LockerRepository {
 public:
 
     map<int, Locker> lockers;
+
     LockerRepository();
+
     void readAll();
+
     Size convertToSize(string word);
+
     string convertToString(Size size);
+
     void create(Locker newLocker);
+
     Locker read(int id);
+
     void update(Locker updatedLocker);
+
     void del(int id);
+
     vector<Locker> getAll();
 
 
