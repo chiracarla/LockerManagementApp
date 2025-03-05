@@ -11,4 +11,6 @@ add_executable(LockerManagementApp main.cpp
         Repository/LockerRepository.cpp
         Repository/LockerRepository.h
         Repository/ReservationRepository.cpp
-        Repository/ReservationRepository.h)
+        Repository/ReservationRepository.h
+        Controller/Controller.cpp
+        Controller/Controller.h)

@@ -55,7 +55,7 @@ void LockerRepository::update(Locker updatedLocker) {
     ofstream f("/Users/carlachira/CLionProjects/LockerManagementApp/lockers.csv");
     lockers.erase(updatedLocker.getId());
     lockers.insert({updatedLocker.getId(), updatedLocker});
-    f << "Id,Number,Location,Size,Price\n";
+    f << "Id,Number,Location,Size,Price,Status\n";
     for (const auto &[k, v]: lockers) {
         f << v.getId() << "," << v.getLockerNumber() << "," << v.getLocation() << "," <<
           convertToString(v.getSize()) << "," << v.getPrice() << "," << v.getStatus() << "\n";
@@ -65,7 +65,7 @@ void LockerRepository::update(Locker updatedLocker) {
 void LockerRepository::del(int id) {
     ofstream f("/Users/carlachira/CLionProjects/LockerManagementApp/lockers.csv");
     lockers.erase(id);
-    f << "Id,Number,Location,Size,Price\n";
+    f << "Id,Number,Location,Size,Price,Status\n";
     for (const auto &[k, v]: lockers) {
         f << v.getId() << "," << v.getLockerNumber() << "," << v.getLocation() << "," <<
           convertToString(v.getSize()) << "," << v.getPrice() << "," << v.getStatus() << "\n";

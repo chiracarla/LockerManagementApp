@@ -79,6 +79,12 @@ build CMakeFiles/LockerManagementApp.dir/Repository/ReservationRepository.cpp.o:
   OBJECT_DIR = CMakeFiles/LockerManagementApp.dir
   OBJECT_FILE_DIR = CMakeFiles/LockerManagementApp.dir/Repository
 
+build CMakeFiles/LockerManagementApp.dir/Controller/Controller.cpp.o: CXX_COMPILER__LockerManagementApp_unscanned_Debug /Users/carlachira/CLionProjects/LockerManagementApp/Controller/Controller.cpp || cmake_object_order_depends_target_LockerManagementApp
+  DEP_FILE = CMakeFiles/LockerManagementApp.dir/Controller/Controller.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/LockerManagementApp.dir
+  OBJECT_FILE_DIR = CMakeFiles/LockerManagementApp.dir/Controller
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LockerManagementApp
@@ -87,7 +93,7 @@ build CMakeFiles/LockerManagementApp.dir/Repository/ReservationRepository.cpp.o:
 #############################################
 # Link the executable LockerManagementApp
 
-build LockerManagementApp: CXX_EXECUTABLE_LINKER__LockerManagementApp_Debug CMakeFiles/LockerManagementApp.dir/main.cpp.o CMakeFiles/LockerManagementApp.dir/Model/Locker.cpp.o CMakeFiles/LockerManagementApp.dir/Model/Reservation.cpp.o CMakeFiles/LockerManagementApp.dir/Repository/LockerRepository.cpp.o CMakeFiles/LockerManagementApp.dir/Repository/ReservationRepository.cpp.o
+build LockerManagementApp: CXX_EXECUTABLE_LINKER__LockerManagementApp_Debug CMakeFiles/LockerManagementApp.dir/main.cpp.o CMakeFiles/LockerManagementApp.dir/Model/Locker.cpp.o CMakeFiles/LockerManagementApp.dir/Model/Reservation.cpp.o CMakeFiles/LockerManagementApp.dir/Repository/LockerRepository.cpp.o CMakeFiles/LockerManagementApp.dir/Repository/ReservationRepository.cpp.o CMakeFiles/LockerManagementApp.dir/Controller/Controller.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/LockerManagementApp.dir
   POST_BUILD = :

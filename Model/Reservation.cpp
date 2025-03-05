@@ -4,9 +4,10 @@
 
 #include "Reservation.h"
 
-Reservation::Reservation(int id, time_t now, int hours, const Locker &locker, const string &password, const string &phoneNumber, float totalPrice)
+Reservation::Reservation(int id, time_t now, int hours, const Locker &locker, const string &password,
+                         const string &phoneNumber, float totalPrice)
         : start(now), locker(locker), password(password), phoneNumber(phoneNumber),
-        id(id), hours(hours), totalPrice(totalPrice){}
+          id(id), hours(hours), totalPrice(totalPrice) {}
 
 time_t Reservation::getStart() const {
     return start;

@@ -1,3 +1,10 @@
-Id,Number,Location,Size,Price
+Id,Number,Location,Size,Price,Status
 1,1,up,SMALL,10,empty
-2,2,down,LARGE,15,busy
+2,2,middle,MEDIUM,13,empty
+3,3,down,LARGE,15,empty
+4,4,up,SMALL,10,empty
+5,5,middle,MEDIUM,13,empty
+6,6,down,LARGE,15,empty
+7,7,up,SMALL,10,empty
+8,8,middle,MEDIUM,13,empty
+9,9,down,LARGE,15,empty

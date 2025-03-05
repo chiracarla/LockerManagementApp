@@ -12,7 +12,7 @@ enum Size {
     SMALL, MEDIUM, LARGE
 };
 
-class Locker {
+class Locker{
 private:
     int lockerNumber;
     string location;
@@ -48,6 +48,8 @@ public:
     void setPrice(float price);
 
     friend ostream &operator<<(ostream &os, const Locker &locker);
+
+    bool operator<(const Locker&) const;
 
 };
 

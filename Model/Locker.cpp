@@ -4,11 +4,14 @@
 
 #include "Locker.h"
 
-Locker::Locker(int id, int lockerNumber, const string &location, Size size, float price, string status) : lockerNumber(lockerNumber),
-                                                                                           location(location),
-                                                                                           size(size), id(id),
-                                                                                           price(price), status(status) {}
-
+Locker::Locker(int id, int lockerNumber, const string &location, Size size, float price, string status) : lockerNumber(
+        lockerNumber),
+                                                                                                          location(
+                                                                                                                  location),
+                                                                                                          size(size),
+                                                                                                          id(id),
+                                                                                                          price(price),
+                                                                                                          status(status) {}
 
 
 int Locker::getLockerNumber() const {
@@ -61,8 +64,12 @@ void Locker::setStatus(const string &status) {
 
 ostream &operator<<(ostream &os, const Locker &locker) {
     os << "id: " << locker.id << "lockerNumber: " << locker.lockerNumber << " location: " << locker.location
-       << " size: " << locker.size << " price: " << locker.price<<" status: "<< locker.status;
+       << " size: " << locker.size << " price: " << locker.price << " status: " << locker.status;
     return os;
+}
+
+bool Locker::operator<(const Locker & l) const {
+    return lockerNumber < l.lockerNumber;
 }
 
 

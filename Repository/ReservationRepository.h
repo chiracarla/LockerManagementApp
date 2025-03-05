@@ -16,7 +16,9 @@ private:
     LockerRepository lockerRepo;
 public:
     explicit ReservationRepository(const LockerRepository &lockerRepo);
+
     map<int, Reservation> reservations;
+
     void readAll();
 
     void create(Reservation newRes);
