@@ -84,12 +84,12 @@ void Controller::pickUpLuggage(time_t now, string phone, string password) {
                     cout<< "you have to pay "<< pay <<" more to get your luggage out"<<endl;
                     reservation.setTotalPrice(pay);
                     reservation.setHours(hours);
-                    reservation.setStatus("completed");
-                    resRepo.update(reservation);
-                    Locker locker = reservation.getLocker();
-                    locker.setStatus("empty");
-                    lockerRepo.update(locker);
                 }
+                reservation.setStatus("completed");
+                resRepo.update(reservation);
+                Locker locker = reservation.getLocker();
+                locker.setStatus("empty");
+                lockerRepo.update(locker);
                 return;
             }
         }
