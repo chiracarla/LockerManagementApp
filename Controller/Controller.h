@@ -16,7 +16,12 @@ private:
     ReservationRepository resRepo;
 public:
     Controller(const LockerRepository &lockerRepo, const ReservationRepository &resRepo);
-    void freeLockers();
+    void freeLockers(); //prints the free lockers before clients have to choose locker size
+    map<Size,vector<Locker>> freeLockersMap();//only for helping reasons
+    void changePrice(float smallPrice, float mediumPrice, float largePrice);
+    void leaveLuggage(Size size, string phoneNum, string password, time_t start, int hours);
+    void pickUpLuggage(time_t time, string phone, string password);
+    int getResId();
     //save to file
     //user should be able to make a reservation, pay for an amount of hours max 24
     //or maybe pay at the end (cash/card)

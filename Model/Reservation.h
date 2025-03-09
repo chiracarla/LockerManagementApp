@@ -21,9 +21,14 @@ private:
     string password;
     string phoneNumber;
     float totalPrice;
+    string status;
 public:
     Reservation(int id, time_t now, int hours, const Locker &locker, const string &password, const string &phoneNumber,
-                float totalPrice);
+                float totalPrice, string status);
+
+    const string &getStatus() const;
+
+    void setStatus(const string &status);
 
     int getHours() const;
 

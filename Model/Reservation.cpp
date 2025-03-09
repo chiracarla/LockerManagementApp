@@ -5,9 +5,9 @@
 #include "Reservation.h"
 
 Reservation::Reservation(int id, time_t now, int hours, const Locker &locker, const string &password,
-                         const string &phoneNumber, float totalPrice)
+                         const string &phoneNumber, float totalPrice, string status)
         : start(now), locker(locker), password(password), phoneNumber(phoneNumber),
-          id(id), hours(hours), totalPrice(totalPrice) {}
+          id(id), hours(hours), totalPrice(totalPrice), status(status) {}
 
 time_t Reservation::getStart() const {
     return start;
@@ -68,7 +68,15 @@ void Reservation::setTotalPrice(float totalPrice) {
 
 ostream &operator<<(ostream &os, const Reservation &reservation) {
     os << "start: " << reservation.start << " locker: " << reservation.locker << " password: " << reservation.password
-       << " phoneNumber: " << reservation.phoneNumber;
+       << " phoneNumber: " << reservation.phoneNumber<<" status: "<< reservation.status;
     return os;
+}
+
+const string &Reservation::getStatus() const {
+    return status;
+}
+
+void Reservation::setStatus(const string &status) {
+    Reservation::status = status;
 }
 

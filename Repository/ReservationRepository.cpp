@@ -1,7 +1,7 @@
 #include "ReservationRepository.h"
 
-ifstream rin("/Users/carlachira/CLionProjects/LockerManagementApp/reservations.csv");
-ofstream rout("/Users/carlachira/CLionProjects/LockerManagementApp/reservations.csv", ios::app);
+ifstream rin("../reservations.csv");
+ofstream rout("../reservations.csv", ios::app);
 
 
 ReservationRepository::ReservationRepository(const LockerRepository &lockerRepo) : lockerRepo(lockerRepo) {
@@ -27,7 +27,7 @@ void ReservationRepository::readAll() {
         ss >> get_time(&tm, "%Y-%m-%d %H:%M:%S");
         time_t time = mktime(&tm);
         Reservation newRes(stoi(row[0]), time, stoi(row[2]), lockerRepo.read(stoi(row[3])), row[4], row[5],
-                           stoi(row[6]));
+                           stoi(row[6]), row[7]);
         reservations.insert({newRes.getId(), newRes});
     }
 }
@@ -39,7 +39,7 @@ void ReservationRepository::create(Reservation newRes) {
     rout << newRes.getId() << "," << 1900 + localTime->tm_year << "-" << 1 + localTime->tm_mon << "-"
          << localTime->tm_mday << " " << localTime->tm_hour << ":" << localTime->tm_min << ":" << localTime->tm_sec
          << "," << newRes.getHours() << "," << newRes.getLocker().getId() << "," << newRes.getPassword()
-         << "," << newRes.getPhoneNumber() << "," << newRes.getTotalPrice() << "\n";
+         << "," << newRes.getPhoneNumber() << "," << newRes.getTotalPrice()<<","<<newRes.getStatus() << "\n";
 }
 
 Reservation ReservationRepository::read(int id) {
@@ -47,7 +47,7 @@ Reservation ReservationRepository::read(int id) {
 }
 
 void ReservationRepository::update(Reservation updatedRes) {
-    ofstream f("/Users/carlachira/CLionProjects/LockerManagementApp/reservations.csv");
+    ofstream f("../reservations.csv");
     reservations.erase(updatedRes.getId());
     reservations.insert({updatedRes.getId(), updatedRes});
     f << "Id,Number,Location,Size,Price\n";
@@ -57,12 +57,12 @@ void ReservationRepository::update(Reservation updatedRes) {
         f << v.getId() << "," << 1900 + localTime->tm_year << "-" << 1 + localTime->tm_mon << "-"
           << localTime->tm_mday << " " << localTime->tm_hour << ":" << localTime->tm_min << ":" << localTime->tm_sec
           << "," << v.getHours() << "," << v.getLocker().getId() << "," << v.getPassword()
-          << "," << v.getPhoneNumber() << "," << v.getTotalPrice() << "\n";
+          << "," << v.getPhoneNumber() << "," << v.getTotalPrice()<<","<<v.getStatus() << "\n";
     }
 }
 
 void ReservationRepository::del(int id) {
-    ofstream f("/Users/carlachira/CLionProjects/LockerManagementApp/reservations.csv");
+    ofstream f("../reservations.csv");
     reservations.erase(id);
     f << "Id,Number,Location,Size,Price\n";
     for (const auto &[k, v]: reservations) {
@@ -71,7 +71,7 @@ void ReservationRepository::del(int id) {
         f << v.getId() << "," << 1900 + localTime->tm_year << "-" << 1 + localTime->tm_mon << "-"
           << localTime->tm_mday << " " << localTime->tm_hour << ":" << localTime->tm_min << ":" << localTime->tm_sec
           << "," << v.getHours() << "," << v.getLocker().getId() << "," << v.getPassword()
-          << "," << v.getPhoneNumber() << "," << v.getTotalPrice() << "\n";
+          << "," << v.getPhoneNumber() << "," << v.getTotalPrice() <<","<<v.getStatus()<< "\n";
     }
 }
 

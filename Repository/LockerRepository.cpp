@@ -1,8 +1,8 @@
 
 #include "LockerRepository.h"
 
-ifstream lin("/Users/carlachira/CLionProjects/LockerManagementApp/lockers.csv");
-ofstream lout("/Users/carlachira/CLionProjects/LockerManagementApp/lockers.csv", ios::app);
+ifstream lin("../lockers.csv");
+ofstream lout("../lockers.csv", ios::app);
 
 LockerRepository::LockerRepository() {
     readAll();
@@ -52,7 +52,7 @@ Locker LockerRepository::read(int id) {
 }
 
 void LockerRepository::update(Locker updatedLocker) {
-    ofstream f("/Users/carlachira/CLionProjects/LockerManagementApp/lockers.csv");
+    ofstream f("../lockers.csv");
     lockers.erase(updatedLocker.getId());
     lockers.insert({updatedLocker.getId(), updatedLocker});
     f << "Id,Number,Location,Size,Price,Status\n";
@@ -63,7 +63,7 @@ void LockerRepository::update(Locker updatedLocker) {
 }
 
 void LockerRepository::del(int id) {
-    ofstream f("/Users/carlachira/CLionProjects/LockerManagementApp/lockers.csv");
+    ofstream f("../lockers.csv");
     lockers.erase(id);
     f << "Id,Number,Location,Size,Price,Status\n";
     for (const auto &[k, v]: lockers) {

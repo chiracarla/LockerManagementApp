@@ -13,14 +13,6 @@ int main() {
     //or maybe pay at the end (cash/card)
     //see available lockers
     //choose locker size
-    //make password temporary
-    //manager should retreive money add money(for change)
-    //change hourly price
-    //set out of order locker
-    //save to file
-    //all busy message
-    //self-service luggage storage
-    //set prices
     LockerRepository lockerRepo;
 //    cout << lockerRepo.lockers.size();
     ReservationRepository resRepo(lockerRepo);
@@ -35,6 +27,9 @@ int main() {
 //    resRepo.del(2);
     Controller ctrl(lockerRepo, resRepo);
     ctrl.freeLockers();
+    ctrl.changePrice(10,13.5,15);
+//    ctrl.leaveLuggage(SMALL, "09876", "lkjhf", time, 2);
+    ctrl.pickUpLuggage(time+3600*3,"09876", "lkjhf");
     //    lockerRepo.update(Locker(2,3,"middle", SMALL, 11));
 //    cout<<lockerRepo.read(2);
 //    cout<<lockerRepo.getAll().at(1);
